@@ -22,7 +22,8 @@ router.post(
   auth,
   check("name", "Name is required").not().isEmpty(),
   check("description", "Description is required").not().isEmpty(),
-  check("location", "Location is required").not().isEmpty(),
+  check("latitude", "Latitude is required").not().isEmpty(),
+  check("longitude", "Longitude is required").not().isEmpty(),
   check("address", "Address is required").not().isEmpty(),
   check("image", "Image is required").not().isEmpty(),
   async (req, res) => {
@@ -31,14 +32,15 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
 
-    const { name, image, description, location, address } = req.body;
+    const { name, image, description, latitude, longitude, address } = req.body;
 
     try {
       const newPlace = new Place({
         name,
         image,
         description,
-        location,
+        latitude,
+        longitude,
         address,
         user: req.user.id,
       });
@@ -53,12 +55,13 @@ router.post(
 
 //update a place
 router.put("/:id", auth, async (req, res) => {
-  const { name, image, description, location, address } = req.body;
+  const { name, image, description, latitude, longitude, address } = req.body;
   const placeField = {};
   if (name) placeField.name = name;
   if (image) placeField.image = image;
   if (description) placeField.description = description;
-  if (location) placeField.location = location;
+  if (latitude) placeField.latitude = latitude;
+  if (longitude) placeField.longitude = longitude;
   if (address) placeField.address = address;
 
   try {
