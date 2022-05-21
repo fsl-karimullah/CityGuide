@@ -1,13 +1,12 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import {StyleSheet, Text, View, StatusBar} from 'react-native';
 import {TailwindProvider} from 'tailwind-rn';
 import utilities from './tailwind.json';
-import Login from './components/Auth/Login';
-
+import React from 'react';
+import Router from './App/routes/index';
 const App = () => {
   return (
     <TailwindProvider utilities={utilities}>
-      <Login />
+      <Router />
     </TailwindProvider>
   );
 };

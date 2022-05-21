@@ -1,1 +1,64 @@
+.absolute {
+  position: absolute
+}
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem
+}
+
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem
+}
+
+.mt-36 {
+  margin-top: 9rem
+}
+
+.mt-5 {
+  margin-top: 1.25rem
+}
+
+.mt-20 {
+  margin-top: 5rem
+}
+
+.flex {
+  display: flex
+}
+
+.h-full {
+  height: 100%
+}
+
+.justify-center {
+  justify-content: center
+}
+
+.self-center {
+  align-self: center
+}
+
+.rounded {
+  border-radius: 0.25rem
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
+.font-bold {
+  font-weight: 700
+}
+
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity))
+}
+
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity))
+}
