@@ -11,13 +11,35 @@ import images from '../utils/image';
 import {Image} from 'react-native';
 import SavedPlaces from '../screen/Homepage/SavedPlaces';
 import Setting from '../screen/Homepage/Setting';
+import {widthPercentageToDP} from 'react-native-responsive-screen';
+import DetailPlace from '../screen/Place/DetailPlace';
+
 export default function App() {
   const Stack = createNativeStackNavigator();
   const Tab = createBottomTabNavigator();
   function BottomMenu() {
     return (
       <Tab.Navigator
-        screenOptions={{headerShown: false, tabBarActiveTintColor: '#00CEC9'}}>
+        screenOptions={{
+          headerShown: false,
+          tabBarActiveTintColor: '#0C9955',
+          // tabBarLabel: '.',
+
+          // tabBarLabelStyle: {
+          //   fontSize: 50,
+          //   position: 'absolute',
+          //   bottom: 0,
+          // },
+          tabBarShowLabel: false,
+          tabBarStyle: {
+            backgroundColor: '#fff',
+            borderTopColor: '#e5e5e5',
+            borderTopWidth: 1,
+            borderTopEndRadius: 20,
+            borderTopStartRadius: 20,
+            height: 80,
+          },
+        }}>
         <Tab.Screen
           name="Home"
           component={Homepage}
@@ -26,7 +48,7 @@ export default function App() {
             tabBarIcon: ({size, focused, color}) => {
               return (
                 <Image
-                  style={{width: size, height: size}}
+                  style={{width: 30, height: 30}}
                   source={focused ? images.homeActive : images.homeInactive}
                 />
               );
@@ -41,7 +63,7 @@ export default function App() {
             tabBarIcon: ({size, focused, color}) => {
               return (
                 <Image
-                  style={{width: 20, height: 20}}
+                  style={{width: 23, height: 23}}
                   source={focused ? images.savedActive : images.savedInactive}
                 />
               );
@@ -56,8 +78,10 @@ export default function App() {
             tabBarIcon: ({size, focused, color}) => {
               return (
                 <Image
-                  style={{width: 20, height: 20}}
-                  source={focused ? images.savedActive : images.savedInactive}
+                  style={{width: size, height: size}}
+                  source={
+                    focused ? images.settingActive : images.settingInactive
+                  }
                 />
               );
             },
@@ -71,7 +95,16 @@ export default function App() {
       <Stack.Navigator initialRouteName="Homepage">
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
-        <Stack.Screen name="Homepage" component={BottomMenu} />
+        <Stack.Screen
+          name="detailPlace"
+          component={DetailPlace}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Homepage"
+          component={BottomMenu}
+          options={{headerShown: false}}
+        />
         <Stack.Screen
           name="HomeSplash"
           component={HomeSplash}

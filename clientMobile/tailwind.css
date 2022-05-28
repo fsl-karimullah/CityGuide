@@ -2,6 +2,42 @@
   position: absolute
 }
 
+.m-5 {
+  margin: 1.25rem
+}
+
+.m-4 {
+  margin: 1rem
+}
+
+.m-2 {
+  margin: 0.5rem
+}
+
+.m-0 {
+  margin: 0px
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem
+}
+
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem
+}
+
+.mx-1 {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem
+}
+
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem
@@ -10,6 +46,24 @@
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem
+}
+
+.my-3 {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem
+}
+
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem
+}
+
+.mr-3 {
+  margin-right: 0.75rem
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem
 }
 
 .mt-36 {
@@ -24,24 +78,139 @@
   margin-top: 5rem
 }
 
+.mb-4 {
+  margin-bottom: 1rem
+}
+
+.mr-1 {
+  margin-right: 0.25rem
+}
+
+.mt-10 {
+  margin-top: 2.5rem
+}
+
+.mt-2 {
+  margin-top: 0.5rem
+}
+
 .flex {
   display: flex
+}
+
+.hidden {
+  display: none
+}
+
+.h-3 {
+  height: 0.75rem
+}
+
+.h-4 {
+  height: 1rem
 }
 
 .h-full {
   height: 100%
 }
 
+.h-5 {
+  height: 1.25rem
+}
+
+.w-full {
+  width: 100%
+}
+
+.w-3 {
+  width: 0.75rem
+}
+
+.w-4 {
+  width: 1rem
+}
+
+.w-5 {
+  width: 1.25rem
+}
+
+.flex-1 {
+  flex: 1 1 0%
+}
+
+.flex-row {
+  flex-direction: row
+}
+
+.flex-col {
+  flex-direction: column
+}
+
+.flex-wrap {
+  flex-wrap: wrap
+}
+
+.items-start {
+  align-items: flex-start
+}
+
+.items-center {
+  align-items: center
+}
+
 .justify-center {
   justify-content: center
+}
+
+.justify-between {
+  justify-content: space-between
+}
+
+.self-end {
+  align-self: flex-end
 }
 
 .self-center {
   align-self: center
 }
 
+.rounded-lg {
+  border-radius: 0.5rem
+}
+
+.rounded-full {
+  border-radius: 9999px
+}
+
+.rounded-xl {
+  border-radius: 0.75rem
+}
+
 .rounded {
   border-radius: 0.25rem
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem
+}
+
+.rounded-t-lg {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem
+}
+
+.border {
+  border-width: 1px
+}
+
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity))
+}
+
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity))
 }
 
 .bg-white {
@@ -49,8 +218,86 @@
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
 }
 
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity))
+}
+
+.p-2 {
+  padding: 0.5rem
+}
+
+.p-1 {
+  padding: 0.25rem
+}
+
+.p-3 {
+  padding: 0.75rem
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem
+}
+
+.pl-3 {
+  padding-left: 0.75rem
+}
+
+.pl-8 {
+  padding-left: 2rem
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem
+}
+
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem
+}
+
 .font-bold {
   font-weight: 700
+}
+
+.font-extrabold {
+  font-weight: 800
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em
 }
 
 .text-black {
@@ -61,4 +308,9 @@
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity))
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity))
 }

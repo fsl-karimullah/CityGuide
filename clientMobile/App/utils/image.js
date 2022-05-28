@@ -8,6 +8,18 @@ const images = {
   homeInactive: require('../assets/Image/house-inactive.png'),
   savedActive: require('../assets/Image/saved-active.png'),
   savedInactive: require('../assets/Image/saved-inactive.png'),
+  settingInactive: require('../assets/Image/setting.png'),
+  settingActive: require('../assets/Image/setting-active.png'),
+  searchIcon: require('../assets/Image/loupe-white.png'),
+  mountainsImg: require('../assets/Image/mountains.png'),
+  villaImg: require('../assets/Image/villa.png'),
+  cafeImg: require('../assets/Image/coffee.png'),
+  hotelImg: require('../assets/Image/hotel.png'),
+  fitnesImg: require('../assets/Image/fitness.png'),
+  grandPadis: require('../assets/Image/grandPadis.jpg'),
+  heartImg: require('../assets/Image/heart.png'),
+  ArrowBack: require('../assets/Image/ArrowBack.png'),
+  locationIcon: require('../assets/Image/location.png'),
 };
 
 export default images;

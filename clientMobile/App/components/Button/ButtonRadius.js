@@ -6,8 +6,10 @@ import {
   View,
   Text,
   TouchableOpacity,
+  customStyleButton,
 } from 'react-native';
 import {widthPercentageToDP} from 'react-native-responsive-screen';
+import {COLOR_PRIMARY} from '../../utils/colors';
 const ButtonRadius = ({
   customStyleContainer,
   title,
@@ -23,7 +25,8 @@ const ButtonRadius = ({
             onPress={onPress}
             style={[
               styles.button,
-              {backgroundColor: isActive ? '#00CEC9' : '#fff'},
+              {backgroundColor: isActive ? COLOR_PRIMARY : '#fff'},
+              customStyleButton,
             ]}>
             <Text
               style={[
@@ -54,6 +57,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     fontWeight: 'bold',
     textAlign: 'center',
+    alignSelf: 'center',
   },
 });
 

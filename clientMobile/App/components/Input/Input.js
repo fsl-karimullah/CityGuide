@@ -24,13 +24,17 @@ const Input = ({
   isIconRight,
   onPressIconRight,
   imageIconRight,
+  customStyleIconContainer,
+  customStyleIcon,
+  customStyleInputContainer,
 }) => {
   const tailwind = useTailwind();
   return (
     <SafeAreaView style={tailwind('')}>
       <View style={tailwind('my-5')}>
         <Text style={styles.titleInput}>{title}</Text>
-        <View style={[tailwind('flex justify-center')]}>
+        <View
+          style={[tailwind('flex justify-center '), customStyleInputContainer]}>
           <TextInput
             style={[styles.input, customStyleInput]}
             onChangeText={onchangeText}
@@ -41,10 +45,14 @@ const Input = ({
           {isIconRight ? (
             <TouchableOpacity
               onPress={onPressIconRight}
-              style={[tailwind(''), styles.iconRightContainer]}>
+              style={[
+                tailwind(''),
+                styles.iconRightContainer,
+                customStyleIconContainer,
+              ]}>
               <Image
                 source={imageIconRight}
-                style={[tailwind(''), styles.iconRight]}
+                style={[tailwind(''), styles.iconRight, customStyleIcon]}
               />
             </TouchableOpacity>
           ) : null}
