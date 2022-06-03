@@ -10,20 +10,26 @@ const SavedPlaces = require("./models/SavedPlaces");
 const Categories = require("./models/Categories");
 
 AdminJS.registerAdapter(AdminJSMongoose);
-app.use("/api/auth", require("./routes/auth/auth"));
-app.use("/api/users", require("./routes/auth/users"));
-app.use("/api/places", require("./routes/places/place"));
 
 const run = async () => {
   try {
     await mongoDB();
+    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
+    app.use("/api/auth", require("./routes/auth/auth"));
 
+    app.use("/api/users", require("./routes/auth/users"));
+    app.use("/api/places", require("./routes/places/place"));
     const contentParent = {
       name: "User Management",
       icon: "Accessibility",
     };
     const PlacesManagement = {
       name: "Places Posts",
+      icon: "Accessibility",
+    };
+    const CategoryManagement = {
+      name: "Category Management",
       icon: "Accessibility",
     };
 
@@ -40,6 +46,10 @@ const run = async () => {
           resource: Places,
           options: { parent: PlacesManagement },
         },
+        {
+          resource: Categories,
+          options: { parent: CategoryManagement },
+        },
       ],
 
       rootPath: "/admin",
@@ -50,8 +60,9 @@ const run = async () => {
 
     const router = AdminJSExpress.buildRouter(adminJs);
     app.use(adminJs.options.rootPath, router);
-    app.listen(8080, () =>
-      console.log("AdminJS is under localhost:8080/admin")
+
+    app.listen(8000, () =>
+      console.log("AdminJS is under localhost:8000/admin")
     );
   } catch (error) {
     console.log(error);

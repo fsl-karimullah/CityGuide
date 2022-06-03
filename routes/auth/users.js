@@ -13,13 +13,13 @@ router.post(
   "/",
   check("username", "Username is required").notEmpty(),
   check("email", "Please enter a valid email").isEmail(),
-  check("roles", "Please select at least one role").notEmpty(),
   check(
     "password",
     "Please enter a valid password with 6 or more character"
   ).isLength({ min: 6 }),
   async (req, res) => {
     const error = validationResult(req);
+
     if (!error.isEmpty()) {
       return res.status(400).json({ errors: error.array() });
     }
