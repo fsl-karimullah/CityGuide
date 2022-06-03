@@ -20,6 +20,8 @@ const images = {
   heartImg: require('../assets/Image/heart.png'),
   ArrowBack: require('../assets/Image/ArrowBack.png'),
   locationIcon: require('../assets/Image/location.png'),
+  saveGreenIcon: require('../assets/Image/saveGreen.png'),
+  pinIcon: require('../assets/Image/pin.png'),
 };
 
 export default images;

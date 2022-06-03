@@ -6,12 +6,12 @@
   margin: 1.25rem
 }
 
-.m-4 {
-  margin: 1rem
-}
-
 .m-2 {
   margin: 0.5rem
+}
+
+.m-4 {
+  margin: 1rem
 }
 
 .m-0 {
@@ -23,29 +23,24 @@
   margin-bottom: 0.5rem
 }
 
-.mx-5 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem
-}
-
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem
-}
-
-.mx-1 {
-  margin-left: 0.25rem;
-  margin-right: 0.25rem
-}
-
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem
 }
 
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem
+}
+
 .mx-10 {
   margin-left: 2.5rem;
   margin-right: 2.5rem
+}
+
+.mx-4 {
+  margin-left: 1rem;
+  margin-right: 1rem
 }
 
 .my-3 {
@@ -58,7 +53,8 @@
   margin-right: 0.5rem
 }
 
-.mr-3 {
+.mx-3 {
+  margin-left: 0.75rem;
   margin-right: 0.75rem
 }
 
@@ -78,12 +74,16 @@
   margin-top: 5rem
 }
 
-.mb-4 {
-  margin-bottom: 1rem
+.mb-2 {
+  margin-bottom: 0.5rem
 }
 
 .mr-1 {
   margin-right: 0.25rem
+}
+
+.mb-4 {
+  margin-bottom: 1rem
 }
 
 .mt-10 {
@@ -102,20 +102,24 @@
   display: none
 }
 
-.h-3 {
-  height: 0.75rem
-}
-
-.h-4 {
-  height: 1rem
+.h-7 {
+  height: 1.75rem
 }
 
 .h-full {
   height: 100%
 }
 
+.h-3 {
+  height: 0.75rem
+}
+
 .h-5 {
   height: 1.25rem
+}
+
+.w-7 {
+  width: 1.75rem
 }
 
 .w-full {
@@ -124,10 +128,6 @@
 
 .w-3 {
   width: 0.75rem
-}
-
-.w-4 {
-  width: 1rem
 }
 
 .w-5 {
@@ -142,20 +142,12 @@
   flex-direction: row
 }
 
-.flex-col {
-  flex-direction: column
-}
-
 .flex-wrap {
   flex-wrap: wrap
 }
 
 .items-start {
   align-items: flex-start
-}
-
-.items-center {
-  align-items: center
 }
 
 .justify-center {
@@ -174,16 +166,12 @@
   align-self: center
 }
 
-.rounded-lg {
-  border-radius: 0.5rem
+.rounded-xl {
+  border-radius: 0.75rem
 }
 
 .rounded-full {
   border-radius: 9999px
-}
-
-.rounded-xl {
-  border-radius: 0.75rem
 }
 
 .rounded {
@@ -208,14 +196,14 @@
   border-color: rgb(156 163 175 / var(--tw-border-opacity))
 }
 
-.bg-gray-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(229 231 235 / var(--tw-bg-opacity))
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity))
+}
+
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity))
 }
 
 .bg-gray-100 {
@@ -235,6 +223,16 @@
   padding: 0.75rem
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem
@@ -248,11 +246,6 @@
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem
-}
-
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem
 }
 
 .pl-3 {

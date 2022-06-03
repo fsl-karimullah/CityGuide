@@ -3,11 +3,16 @@ import {TailwindProvider} from 'tailwind-rn';
 import utilities from './tailwind.json';
 import React from 'react';
 import Router from './App/routes/index';
+import {Provider} from 'react-redux';
+import configureStore from './App/redux/store/configureStore';
+const store = configureStore();
 const App = () => {
   return (
-    <TailwindProvider utilities={utilities}>
-      <Router />
-    </TailwindProvider>
+    <Provider store={store}>
+      <TailwindProvider utilities={utilities}>
+        <Router />
+      </TailwindProvider>
+    </Provider>
   );
 };
 

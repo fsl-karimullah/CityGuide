@@ -27,6 +27,8 @@ const Input = ({
   customStyleIconContainer,
   customStyleIcon,
   customStyleInputContainer,
+  isError = false,
+  errorMessage,
 }) => {
   const tailwind = useTailwind();
   return (
@@ -57,6 +59,7 @@ const Input = ({
             </TouchableOpacity>
           ) : null}
         </View>
+        {isError ? <Text style={styles.errorInput}>{errorMessage}</Text> : null}
       </View>
     </SafeAreaView>
   );
@@ -88,6 +91,11 @@ const styles = StyleSheet.create({
   iconRightContainer: {
     position: 'absolute',
     right: 0,
+  },
+  errorInput: {
+    color: 'red',
+    fontSize: widthPercentageToDP('3%'),
+    marginTop: 5,
   },
 });
 export default Input;

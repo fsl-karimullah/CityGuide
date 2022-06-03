@@ -23,6 +23,7 @@ import {COLOR_PRIMARY, COLOR_SECONDARY} from '../../utils/colors';
 import TitleWithButton from '../../components/Title/TitleWithButton';
 const DetailPlace = ({navigation}) => {
   const tailwind = useTailwind();
+  const [isSaved, setisSaved] = useState(false);
   const [dataService, setdataService] = useState([
     {id: 1, name: 'Coffee Menus'},
     {id: 2, name: 'Wifi'},
@@ -35,7 +36,7 @@ const DetailPlace = ({navigation}) => {
   return (
     <SafeAreaView style={tailwind('bg-white flex-1')}>
       <ScrollView>
-        <View style={tailwind('m-5 ')}>
+        <View style={tailwind('m-5')}>
           <StatusBar barStyle="dark-content" backgroundColor={'transparent'} />
           <ImageBackground
             source={images.grandPadis}
@@ -88,15 +89,15 @@ const DetailPlace = ({navigation}) => {
                         fontSize: 14,
                       },
                     ]}>
-                    No Event
+                    Event
                   </Text>
                 </View>
-                <Text style={tailwind('text-black self-center')}>/day</Text>
+                <Text style={tailwind('text-black self-center')}>Here</Text>
               </View>
             </View>
           </ImageBackground>
         </View>
-        <View style={tailwind('m-5 mt-10')}>
+        <View style={tailwind('mx-3 mt-10')}>
           <View>
             <TitleWithButton
               customStyleContainer={tailwind('m-0')}
@@ -139,14 +140,49 @@ const DetailPlace = ({navigation}) => {
               </Text>
             </View>
           </View>
+          <View style={tailwind('mt-5')}>
+            <TitleWithButton
+              customStyleContainer={tailwind('m-0')}
+              title={'Event'}
+              customStyleText={{color: COLOR_SECONDARY}}
+            />
+            <View>
+              <Text style={styles.text}>
+                Ada pernikahan Nanda Anubis, cepat datang, walaupun tidak di
+                undang !!
+              </Text>
+            </View>
+          </View>
         </View>
       </ScrollView>
-      <View style={tailwind('m-4')}>
-        <ButtonRadius
-          isActive
-          title="Open On Maps"
-          onPress={() => Alert.alert('Belom', 'Masih belom gannn')}
-        />
+      <View style={[tailwind('m-4 flex-row justify-between')]}>
+        <View style={tailwind('flex-row')}>
+          <TouchableOpacity
+            onPress={() => setisSaved(!isSaved)}
+            style={tailwind('bg-gray-200 p-3  rounded-full')}>
+            <Image
+              style={[tailwind(), styles.iconBottom]}
+              source={isSaved ? images.savedActive : images.saveGreenIcon}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={tailwind('bg-gray-200 mx-4 p-3 rounded-full')}>
+            <Image
+              style={[tailwind(), styles.iconBottom]}
+              source={images.locationIcon}
+            />
+          </TouchableOpacity>
+        </View>
+        <View style={tailwind('self-center')}>
+          <ButtonRadius
+            customStyleButton={{
+              width: widthPercentageToDP('40%'),
+            }}
+            isActive
+            title="Share"
+            onPress={() => Alert.alert('Belom', 'Masih belom gannn')}
+          />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -156,7 +192,7 @@ export default DetailPlace;
 
 const styles = StyleSheet.create({
   placeImage: {
-    width: widthPercentageToDP(90),
+    width: widthPercentageToDP(95),
     height: heightPercentageToDP(50),
     resizeMode: 'cover',
   },
@@ -169,5 +205,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'black',
     marginVertical: 10,
+  },
+  iconBottom: {
+    width: widthPercentageToDP(8),
+    height: heightPercentageToDP(4),
+    resizeMode: 'contain',
   },
 });

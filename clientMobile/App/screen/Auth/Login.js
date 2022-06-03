@@ -15,7 +15,7 @@ import ButtonRadius from '../../components/Button/ButtonRadius';
 import Input from '../../components/Input/Input';
 import images from '../../utils/image';
 
-const Login = () => {
+const Login = ({navigation}) => {
   const [email, onChangeEmail] = React.useState('');
   const [password, onChangePassword] = React.useState(null);
   const tailwind = useTailwind();
@@ -48,10 +48,7 @@ const Login = () => {
             isShowPassword ? images.hidePassword : images.viewPassword
           }
         />
-        <TouchableOpacity
-          onPress={() =>
-            Alert.alert('Hello', 'this feature not available hehe')
-          }>
+        <TouchableOpacity>
           <Text style={[tailwind('text-blue-500 font-bold')]}>
             Forgot Password ?
           </Text>
@@ -61,6 +58,7 @@ const Login = () => {
       <ButtonRadius
         title="Login"
         isActive={true}
+        onPress={() => navigation.navigate('Homepage')}
         customStyleContainer={tailwind('mt-5')}
       />
     </SafeAreaView>

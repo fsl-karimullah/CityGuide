@@ -13,6 +13,7 @@ import SavedPlaces from '../screen/Homepage/SavedPlaces';
 import Setting from '../screen/Homepage/Setting';
 import {widthPercentageToDP} from 'react-native-responsive-screen';
 import DetailPlace from '../screen/Place/DetailPlace';
+import {COLOR_PRIMARY} from '../utils/colors';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -59,7 +60,17 @@ export default function App() {
           name="Saved Places"
           component={SavedPlaces}
           options={{
-            title: 'Saved Places',
+            headerShown: true,
+            headerShadowVisible: true,
+            headerStyle: {
+              backgroundColor: 'white',
+              borderBottomColor: '#e5e5e5',
+              borderBottomWidth: 1,
+
+              height: 80,
+            },
+            headerTitleAlign: 'center',
+            title: 'Your Saved Places',
             tabBarIcon: ({size, focused, color}) => {
               return (
                 <Image
@@ -90,11 +101,18 @@ export default function App() {
       </Tab.Navigator>
     );
   }
+
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Homepage">
+      <Stack.Navigator
+        initialRouteName="intro"
+        screenOptions={(orientation = 'all')}>
         <Stack.Screen name="Login" component={Login} />
+
         <Stack.Screen name="Register" component={Register} />
+
+        <Stack.Screen name="Home" component={Homepage} />
+
         <Stack.Screen
           name="detailPlace"
           component={DetailPlace}

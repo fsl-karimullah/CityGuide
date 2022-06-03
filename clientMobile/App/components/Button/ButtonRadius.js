@@ -6,7 +6,7 @@ import {
   View,
   Text,
   TouchableOpacity,
-  customStyleButton,
+  ActivityIndicator,
 } from 'react-native';
 import {widthPercentageToDP} from 'react-native-responsive-screen';
 import {COLOR_PRIMARY} from '../../utils/colors';
@@ -14,7 +14,9 @@ const ButtonRadius = ({
   customStyleContainer,
   title,
   onPress,
+  customStyleButton,
   isActive = false,
+  isLoading = false,
 }) => {
   return (
     <>
@@ -25,16 +27,20 @@ const ButtonRadius = ({
             onPress={onPress}
             style={[
               styles.button,
-              {backgroundColor: isActive ? COLOR_PRIMARY : '#fff'},
               customStyleButton,
+              {backgroundColor: isActive ? COLOR_PRIMARY : '#fff'},
             ]}>
-            <Text
-              style={[
-                styles.buttonText,
-                {color: isActive ? 'white' : 'black'},
-              ]}>
-              {title}
-            </Text>
+            {isLoading ? (
+              <ActivityIndicator size="small" color="#0000ff" />
+            ) : (
+              <Text
+                style={[
+                  styles.buttonText,
+                  {color: isActive ? 'white' : 'black'},
+                ]}>
+                {title}
+              </Text>
+            )}
           </TouchableOpacity>
         </View>
       </SafeAreaView>

@@ -7,7 +7,7 @@ import {
   Image,
   StatusBar,
 } from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import images from '../../utils/image';
 import {
   heightPercentageToDP,
@@ -15,8 +15,24 @@ import {
 } from 'react-native-responsive-screen';
 import {useTailwind} from 'tailwind-rn';
 import ButtonRadius from '../../components/Button/ButtonRadius';
+import axios from 'axios';
+import {NETWORK_NGROK} from '../../utils/network';
 const HomeSplash = ({navigation}) => {
   let tailwind = useTailwind();
+  const getMoviesFromApiAsync = async () => {
+    axios
+      .get(`${NETWORK_NGROK}/api/places`)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+  useEffect(() => {
+    getMoviesFromApiAsync();
+  }, []);
+
   return (
     <SafeAreaView>
       <StatusBar backgroundColor={'transparent'} />

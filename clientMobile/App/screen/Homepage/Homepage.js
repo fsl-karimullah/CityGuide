@@ -23,10 +23,12 @@ import {COLOR_PRIMARY} from '../../utils/colors';
 const Homepage = ({navigation}) => {
   const tailwind = useTailwind();
   const isEvent = false;
+
   const [dataTemp, setdataTemp] = useState([
     {
       id: 1,
-      placeName: 'Grand Padis Hotel Bondowoso',
+      placeName: 'Grand Padis Hotel Jember',
+      placeAddress: 'Bondowoso',
       Category: 'Hotel',
       image: images.grandPadis,
     },
@@ -35,12 +37,14 @@ const Homepage = ({navigation}) => {
       placeName: 'Pesen Kopi',
       Category: 'Cafetaria',
       image: images.grandPadis,
+      placeAddress: 'Bondowoso',
     },
     {
       id: 3,
       placeName: 'Puncak Pyramid',
       Category: 'Nature Tour',
       image: images.grandPadis,
+      placeAddress: 'Bondowoso',
     },
   ]);
   const [dataTemp2, setdataTemp2] = useState([
@@ -49,6 +53,7 @@ const Homepage = ({navigation}) => {
       placeName: 'Grand Padis Hotel Bondowoso',
       Category: 'Hotel',
       image: images.grandPadis,
+      placeAddress: 'Bondowoso',
       isEvent: false,
     },
     {
@@ -56,6 +61,7 @@ const Homepage = ({navigation}) => {
       placeName: 'Pesen Kopi',
       Category: 'Cafetaria',
       image: images.grandPadis,
+      placeAddress: 'Jember',
       isEvent: false,
     },
     {
@@ -63,6 +69,7 @@ const Homepage = ({navigation}) => {
       placeName: 'Puncak Pyramid',
       Category: 'Nature Tour',
       image: images.grandPadis,
+      placeAddress: 'Malang',
       isEvent: false,
     },
     {
@@ -70,6 +77,7 @@ const Homepage = ({navigation}) => {
       placeName: 'Gelora Bondowoso',
       Category: 'Tour',
       image: images.grandPadis,
+      placeAddress: 'Bondowoso',
       isEvent: true,
     },
     {
@@ -77,6 +85,7 @@ const Homepage = ({navigation}) => {
       placeName: 'Unej Bondowoso Porprov',
       Category: 'Tournament',
       image: images.grandPadis,
+      placeAddress: 'Bondowoso',
       isEvent: true,
     },
   ]);
@@ -278,14 +287,26 @@ const Homepage = ({navigation}) => {
                           backgroundColor: 'white',
                         })
                       }>
-                      <View></View>
                       <View style={tailwind('')}>
                         <Text
                           style={[
-                            tailwind('mb-4 font-bold'),
+                            tailwind('mb-2 font-bold'),
                             styles.textEvent2,
                           ]}>
                           {item.placeName}
+                        </Text>
+                      </View>
+                      <View style={tailwind('flex-row')}>
+                        <Image
+                          source={images.pinIcon}
+                          style={tailwind('w-5 h-5 mr-1')}
+                        />
+                        <Text
+                          style={[
+                            tailwind('mb-4 self-center font-bold'),
+                            styles.textEvent3,
+                          ]}>
+                          {item.placeAddress}
                         </Text>
                       </View>
                     </View>
@@ -324,6 +345,11 @@ const styles = StyleSheet.create({
   textEvent2: {
     color: 'black',
     fontSize: widthPercentageToDP('4.5%'),
+    overflow: 'hidden',
+  },
+  textEvent3: {
+    color: 'black',
+    fontSize: widthPercentageToDP('3%'),
     overflow: 'hidden',
   },
 });
