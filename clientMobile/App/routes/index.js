@@ -120,7 +120,13 @@ export default function App() {
         <Stack.Screen name="Register" component={Register} />
 
         <Stack.Screen name="Home" component={Homepage} />
-        <Stack.Screen name="SplashScreen" component={SplashScreen} />
+        <Stack.Screen
+          name="SplashScreen"
+          component={SplashScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
         <Stack.Screen
           options={{
             headerTitle: 'Favourites Places',
