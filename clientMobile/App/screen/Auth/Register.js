@@ -65,7 +65,11 @@ const Register = () => {
               isShowPassword ? images.hidePassword : images.viewPassword
             }
           />
+          <Text style={[tailwind('text-gray-600 text-center font-bold')]}>
+            By signing up i agree to the privacy policy and terms of service
+          </Text>
         </View>
+
         <ButtonRadius
           title="Register"
           isActive={true}

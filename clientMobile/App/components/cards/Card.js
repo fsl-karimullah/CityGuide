@@ -36,7 +36,7 @@ const GolfCourseCard = ({
       onPress={onPress}
       key={index}
       style={[
-        tailwind('my-2 bg-white rounded-xl shadow-lg self-center m-5'),
+        tailwind('my-2 bg-white rounded-xl self-center m-5'),
         customStyleContainer,
         {
           shadowColor: '#000',

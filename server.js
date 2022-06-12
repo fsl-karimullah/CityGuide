@@ -3,11 +3,13 @@ const AdminJS = require("adminjs");
 const AdminJSMongoose = require("@adminjs/mongoose");
 const express = require("express");
 const app = express();
+const uploadFeature = require("@adminjs/upload");
 const mongoDB = require("./config/db");
 const User = require("./models/User");
 const Places = require("./models/Places");
 const SavedPlaces = require("./models/SavedPlaces");
 const Categories = require("./models/Categories");
+const path = require("path");
 
 AdminJS.registerAdapter(AdminJSMongoose);
 
@@ -45,6 +47,15 @@ const run = async () => {
         {
           resource: Places,
           options: { parent: PlacesManagement },
+          features: [
+            uploadFeature({
+              provider: { local: { bucket: path.join(__dirname, "./public") } },
+              properties: {
+                key: "fileUrl",
+                mimeType: "mimeType",
+              },
+            }),
+          ],
         },
         {
           resource: Categories,
@@ -60,7 +71,7 @@ const run = async () => {
 
     const router = AdminJSExpress.buildRouter(adminJs);
     app.use(adminJs.options.rootPath, router);
-
+    app.use("./public", express.static("public"));
     app.listen(8000, () =>
       console.log("AdminJS is under localhost:8000/admin")
     );

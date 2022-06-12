@@ -7,9 +7,14 @@ import {useTailwind} from 'tailwind-rn';
 const SavedPlaces = () => {
   const tailwind = useTailwind();
   const [dataSaved, setdataSaved] = useState([
-    {id: 1, name: 'Coffee Menus', img: images.grandPadis, address: 'Bondowoso'},
-    {id: 2, name: 'Wifi', img: images.grandPadis, address: 'Jember'},
-    {id: 3, name: 'Parking', img: images.grandPadis, address: 'Malang'},
+    {
+      id: 1,
+      name: 'Grand Padis Bondowoso',
+      img: images.grandPadis,
+      address: 'Bondowoso',
+    },
+    {id: 2, name: 'Puncak Pyramid', img: images.grandPadis, address: 'Jember'},
+    {id: 3, name: 'Semeru', img: images.grandPadis, address: 'Malang'},
   ]);
   return (
     <View style={tailwind('bg-white flex-1')}>

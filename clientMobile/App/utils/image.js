@@ -22,6 +22,8 @@ const images = {
   locationIcon: require('../assets/Image/location.png'),
   saveGreenIcon: require('../assets/Image/saveGreen.png'),
   pinIcon: require('../assets/Image/pin.png'),
+  arrowRightBtn: require('../assets/Image/play.png'),
+  userImg: require('../assets/Image/user.png'),
 };
 
 export default images;

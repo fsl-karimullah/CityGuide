@@ -45,5 +45,5 @@
   "jest": {
     "preset": "react-native"
   },
-  "proxy": " https://a615-125-166-117-206.ap.ngrok.io"
+  "proxy": "https://a615-125-166-117-206.ap.ngrok.io"
 }

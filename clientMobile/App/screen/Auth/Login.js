@@ -53,6 +53,10 @@ const Login = ({navigation}) => {
             Forgot Password ?
           </Text>
         </TouchableOpacity>
+
+        <Text style={[tailwind('text-gray-600 text-center mt-5 font-bold')]}>
+          By signing up i agree to the privacy policy and terms of service
+        </Text>
       </View>
 
       <ButtonRadius

@@ -14,6 +14,10 @@ import Setting from '../screen/Homepage/Setting';
 import {widthPercentageToDP} from 'react-native-responsive-screen';
 import DetailPlace from '../screen/Place/DetailPlace';
 import {COLOR_PRIMARY} from '../utils/colors';
+import Profile from '../screen/Profile/Profile';
+import SplashScreen from '../screen/HomeSplash/SplashScreen';
+import DetailAll from '../screen/Homepage/DetailAll';
+import PopularPlace from '../screen/Homepage/PopularPlace';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -85,6 +89,10 @@ export default function App() {
           name="Setting"
           component={Setting}
           options={{
+            headerTitle: 'Setting',
+            headerShown: true,
+            headerShadowVisible: true,
+            headerTitleAlign: 'center',
             title: 'Setting',
             tabBarIcon: ({size, focused, color}) => {
               return (
@@ -105,13 +113,36 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="intro"
+        initialRouteName="SplashScreen"
         screenOptions={(orientation = 'all')}>
         <Stack.Screen name="Login" component={Login} />
 
         <Stack.Screen name="Register" component={Register} />
 
         <Stack.Screen name="Home" component={Homepage} />
+        <Stack.Screen name="SplashScreen" component={SplashScreen} />
+        <Stack.Screen
+          options={{
+            headerTitle: 'Favourites Places',
+          }}
+          name="detailAll"
+          component={DetailAll}
+        />
+        <Stack.Screen
+          options={{
+            headerTitle: 'Popular Places',
+          }}
+          name="PopularPlace"
+          component={PopularPlace}
+        />
+        <Stack.Screen
+          name="Profile"
+          component={Profile}
+          options={{
+            headerTitleAlign: 'center',
+            headerTitle: 'Profile',
+          }}
+        />
 
         <Stack.Screen
           name="detailPlace"

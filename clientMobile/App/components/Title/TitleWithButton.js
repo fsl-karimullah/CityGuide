@@ -7,11 +7,12 @@ const TitleWithButton = ({
   isButtonRight = false,
   customStyleContainer,
   customStyleText,
+  onPressRight,
 }) => {
   const tailwind = useTailwind();
   return (
     <View
-      style={[tailwind('mx-5 flex-row justify-between'), customStyleContainer]}>
+      style={[tailwind('mx-3 flex-row justify-between'), customStyleContainer]}>
       <View style={tailwind('self-center')}>
         <Text
           style={[
@@ -22,7 +23,9 @@ const TitleWithButton = ({
         </Text>
       </View>
       {isButtonRight ? (
-        <TouchableOpacity style={tailwind('self-center mx-5')}>
+        <TouchableOpacity
+          onPress={onPressRight}
+          style={tailwind('self-center ')}>
           <Text
             style={[
               tailwind('text-lg tracking-widest font-bold'),

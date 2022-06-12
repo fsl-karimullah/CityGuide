@@ -121,7 +121,7 @@ const Homepage = ({navigation}) => {
         </View>
         <View>
           <TitleWithButton title="Category" />
-          <View style={tailwind('my-5')}>
+          <View style={tailwind('my-5 mx-5')}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
               <TouchableOpacity style={tailwind('mx-5')}>
                 <Image
@@ -172,8 +172,12 @@ const Homepage = ({navigation}) => {
           </View>
         </View>
         <View style={tailwind('')}>
-          <TitleWithButton title="Popular" isButtonRight />
-          <View style={tailwind('m-4')}>
+          <TitleWithButton
+            title="Popular"
+            onPressRight={() => navigation.navigate('PopularPlace')}
+            isButtonRight
+          />
+          <View style={tailwind('pl-3 my-3')}>
             <FlatList
               horizontal={true}
               showsHorizontalScrollIndicator={false}
@@ -220,8 +224,12 @@ const Homepage = ({navigation}) => {
           </View>
         </View>
         <View>
-          <TitleWithButton title="Favourites" isButtonRight />
-          <View style={tailwind('m-4')}>
+          <TitleWithButton
+            title="Favourites"
+            isButtonRight
+            onPressRight={() => navigation.navigate('detailAll')}
+          />
+          <View style={tailwind('pl-3 my-3')}>
             <FlatList
               horizontal={true}
               showsHorizontalScrollIndicator={false}
@@ -327,6 +335,7 @@ const styles = StyleSheet.create({
   imageIcon: {
     width: widthPercentageToDP('15%'),
     height: widthPercentageToDP('15%'),
+    alignSelf: 'center',
   },
   eventImages: {
     width: Dimensions.get('window').width * 0.37,
